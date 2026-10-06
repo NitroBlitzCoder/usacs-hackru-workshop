@@ -21,12 +21,12 @@ services:
   backend:
     build:
       context: ./backend
-      dockerfile: Dockerfile
+      dockerfile: backend/Dockerfile
     environment:
-      PORT: 4000
+      PORT: 8000
       DATABASE_URL: postgres://countdowns:countdowns@db:5432/countdowns
       DATABASE_SSL: "false"
-      CORS_ORIGIN: "http://localhost:5173"
+      CORS_ORIGIN: "https://localhost:5173"
     ports:
       - "4000:4000"
     depends_on:
